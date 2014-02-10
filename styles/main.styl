@@ -1,0 +1,144 @@
+/*
+ * The following styles follow a mobile first approach
+ * 
+ * DO NOT adhoc @media width!!!
+ * - The following min-widths are supported:
+ * - Default (think 320 - No horizonal layout), 480, 600, 768, 992, 1382
+ * - If a media query is added or removed MAKE CHANGES TO ALL FILES even if it is not being used.
+ */
+
+/*
+ * Common lib, mixins, functions etc..
+ */
+@import 'common'
+
+mobileMenuWidth = 200px;
+logoHeight = 135px
+
+
+//http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+global-reset()
+
+/* DEFAULT ============================================================================= */
+html {
+	height: 100%;
+	background-color: tallPoppy;
+}
+
+body {
+	min-height: 100%;
+	width: 100%;
+	background-color: white;
+
+	// VERY IMPORTANT - for mobile menu
+	overflow-x: hidden;
+}
+
+body.mobilemenu {
+	position: relative;
+	left: mobileMenuWidth;
+
+	ul.pages {
+		display: block;
+		position: absolute;
+		left: -(mobileMenuWidth);
+		top: 0;
+		width: mobileMenuWidth;
+	}
+}
+
+#container {
+	background: url('http://at-api.aucklandtransport.govt.nz/imageresizer/website/eeeeee_100x100.png?width=60&margin=0,0,20,0&bgcolor=ffffff');
+	height: 100%;
+}
+
+nav {
+	overflow: hidden;
+}
+
+ul.pages {
+	display: none;
+	background-color: tallPoppy;
+	color: white;
+	list-style: none;
+	font-family: 'Dosis', sans-serif;
+	font-size: 19px;
+
+	li {
+		cursor: pointer;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+article {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #fcfcfc;
+	margin: 80px 10%;
+	padding: 20px 80px;
+}
+
+/* 480 PX ============================================================================= */
+@media only screen and (min-width: 480px) {
+}
+
+/* 600 PX ============================================================================= */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* 768 PX ============================================================================= */
+@media only screen and (min-width: 768px) {
+	header {
+		overflow: hidden;
+	}
+	
+	a#home {
+		position: absolute;
+		left: 2%;
+	}
+
+	ul.pages {
+		padding-left: logoHeight;
+		display: block;
+		text-align: center;
+		line-height: 30px;
+		margin-top: ((logoHeight - 30px) / 2);
+
+		li {
+			inline-block();
+			margin: 0 6px;
+		}
+	}
+}
+
+/* 992 PX ============================================================================= */
+@media only screen and (min-width: 992px) {
+	ul.pages {
+		padding-left: 80px; // randomly chosen
+		font-size: 21px;
+		line-height: 35px;
+		margin-top: ((logoHeight - 35px) / 2);
+
+		li {
+			inline-block();
+			margin: 0 12px;
+		}
+	}
+}
+
+/* 992 PX ============================================================================= */
+@media only screen and (min-width: 1382px) {
+	ul.pages {
+		font-size: 25px;
+		line-height: 40px;
+		margin-top: ((logoHeight - 40px) / 2);
+
+		li {
+			inline-block();
+			margin: 0 17px;
+		}
+	}
+}

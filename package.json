@@ -1,0 +1,19 @@
+{
+	"name": "aucklandtransitdata",
+	"version": "0.1.0",
+	"description": "builds the client assets for the aucklandtransitdata site",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"preinstall": "npm install -g jake"
+	},
+	"repository": "",
+	"author": "",
+	"devDependencies": {
+		"stylus": "0.40.x",
+		"nib": "1.0.x",
+		"browserify": "2.35.x",
+		"brfs": "0.0.x",
+		"browserify-shim": "2.0.x",
+		"uglify-js": "2.4.x"
+	}
+}

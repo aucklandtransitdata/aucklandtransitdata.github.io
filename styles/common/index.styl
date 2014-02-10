@@ -1,0 +1,44 @@
+@import  'dimensions'
+@import "constants"
+
+/*
+ * nib library "USE IT"
+ * http://visionmedia.github.io/nib/
+ */
+@import 'nib'
+
+
+inline-block()
+	display inline-block
+	*display inline
+	zoom 1
+		
+justify-children(childTextAlign, childVerticalAlign)
+	text-align justify
+
+	/* For IE6 to IE7 since they don't support :after */
+	-ms-text-justify distribute
+	text-justify distribute
+	text-align-last justify
+	zoom 1
+
+	&:after
+		content ".";
+		display inline-block
+		width 100%
+		height 0
+		visibility hidden
+
+	>*
+		inline-block()
+		
+		text-align childTextAlign
+		text-align-last childTextAlign
+		vertical-align childVerticalAlign
+
+normal-text()
+	font-family KievitCompPro-Medi, Arial, Helvetica, sans-serif
+
+bold-text()
+	font-family KievitCompPro-Black, Arial, Helvetica, sans-serif
+	font-weight: bold;

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+
+	<title>HACK-AKL 2014</title>
+
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+
+	<!-- For all browsers -->
+	<link rel="stylesheet" href="./public/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
+
+	<!--[if (lt IE 9) & (!IEMobile)]>
+		<script src="/public/selectivizr-min.js"></script>
+	<![endif]-->
+
+	<!-- JavaScript -->
+	<script src="/public/modernizr-2.5.3-min.js"></script>
+	<script src="./public/main.js"></script>
+
+	<!-- 16x16 -->
+	<link rel="shortcut icon" href="/favicon.ico">
+	<!-- 32x32 -->
+	<link rel="shortcut icon" href="">
+	<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+	<link rel="apple-touch-icon-precomposed" href="">
+	<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="">
+	<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="">
+	<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="">
+
+	<!--iOS -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-title" content="HACK-AKL 2014<">
+	<!-- <meta name="viewport" content="initial-scale=1.0"> (Use if apple-mobile-web-app-capable below is set to yes) -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- Startup images -->
+
+	<!-- iPhone 3GS, pre-2011 iPod Touch 320x480 -->
+	<link rel="apple-touch-startup-image" href="" media="screen and (max-device-width:320px)">
+	<!-- iPhone 4, 4S and 2011 iPod Touch 320x920 -->
+	<link rel="apple-touch-startup-image" href="" media="(max-device-width:480px) and (-webkit-min-device-pixel-ratio:2)">
+	<!-- iPhone 5 and 2012 iPod Touch 640x1096 -->
+	<link rel="apple-touch-startup-image" href="" media="(max-device-width:548px) and (-webkit-min-device-pixel-ratio:2)">
+	<!-- iPad landscape 1024x748 -->
+	<link rel="apple-touch-startup-image" sizes="1024x748" href="" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:landscape)">
+	<!-- iPad Portrait 768x1004 -->
+	<link rel="apple-touch-startup-image" sizes="768x1004" href="" media="screen and (min-device-width:481px) and (max-device-width:1024px) and (orientation:portrait)">
+
+	<!-- Windows 8 / RT 144x144 -->
+	<meta name="msapplication-TileImage" content="">
+	<meta name="msapplication-TileColor" content="#BC2828">
+
+	<!-- Microsoft. Delete if not required -->
+	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--[if lt IE 7 ]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script><script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script><![endif]-->
+</head>
+<body>
+	<div id="container">
+		<header>
+			<a id="home" href="./index.html">
+				<img src="./images/hack-akl-logo_135x135.png" width="135" height="135"/>
+			</a>
+			<!-- Folders -->
+			<ul class="pages" data-bind="foreach: pages">
+				<li data-bind="text: $data, 
+								css: { selected: $data == $root.chosenPageId() },
+								click: $root.goToPage"></li>
+			</ul>
+			<a id="mobilemenu" href="#mobilemenu">Menu</a>
+		</header>
+		<article>
+			<h1>Hack-Akl 2014 - 24-26 May 2014</h1>
+			<h2>Welcome to Auckland's first civic hacking event.
+				This is an open invitation to designers, software developers, architects,
+				or anyone who wants to be involved to participate in a weekend of 'coding for good'.</h2>
+
+			<p>This event is what, we hope, to be first of many.
+				It is a seed for establishing a developer community who is interested in making an ongoing contribution
+				to open source civic software solutions that leverage open government data,
+				be it regional or national in source.</p>
+			
+			<p>If we are successful, not only will we have some cool technology outcomes, but more importantly,
+				we will have formed a community within a community (Auckland and New Zealand) that is willing to
+				own the 'civic hacking for good' agenda going forward.</p>
+
+			<p>Auckland Transport is taking the lead in supporting this initiative and in conjunction with 
+				Propellerhead and AUT have put this inaugural event together.</p>
+
+			<p>The mission of this weekend is multifaceted: Our goals include:</p>
+
+			<ul>
+				<li>Providing an opportunity for self development and personal network building</li>
+				<li>Enabling innovation for greater good</li>
+				<li>Support the evolution and  democratisation of open government data</li>
+				<li>Supporting the government STEM agenda - Science, Technology, Engineering and Maths</li>
+				<li>Creating a new Community and its self governance going forward</li>
+			</ul>
+
+			<p>This event is for and about those that participate. 
+				You can choose to take a known challenge or render your own solution based on the data sets 
+				you think will bring value to the wider community in some new useful form.</p>
+
+			<p>Register NOW ( link to registration page)</p>
+		</article>
+	</div>
+</body>
+</html>
