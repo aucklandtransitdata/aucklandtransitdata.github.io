@@ -16175,19 +16175,67 @@ $.extend(Sammy.DefaultLocationProxy.prototype , {
 },{}],"Sammy":[function(require,module,exports){
 module.exports=require('x6MEqD');
 },{}],7:[function(require,module,exports){
-var $ = require('jquery'),
+var $ = require('jquery')/*,
 	ko = require('knockout'),
-	Sammy = require('Sammy');
+	Sammy = require('Sammy');*/
 
 $(function () {
 
+	var $mobilemenu = $('#mobilemenu');
+
 	// mobile menu
-	$('#mobilemenu').click(function () {
+	$mobilemenu.click(function () {
 		$('body').toggleClass('mobilemenu');
 		return false;
 	});
 
-	function PagesViewModel() {
+	var isMobile = false;
+
+	$(window).on('hashchange', function () {
+
+		$('body').removeClass('mobilemenu');
+	});
+
+	$(window).on('resize', function () {
+		$('body').removeClass('mobilemenu');
+
+		var width = $(window).width();
+
+		if (width < 768) {
+			isMobile = true;
+			//$.data(this, 'scrollTimer', setTimeout(function() {
+				$mobilemenu.fadeIn(250);
+			//}, 250));
+		} else {
+			isMobile = false;
+			$mobilemenu.fadeOut(0);
+		}
+
+		//console.log('isMobile: ' + isMobile);
+	});
+
+	$(window).resize();
+
+	$('section').each(function () {
+		$(this).append('<div class="clear" />');
+	});
+
+	//$mobilemenu.show(1000);
+
+	$(window).on('scroll', function () {
+
+		if (isMobile) {
+			$mobilemenu.fadeOut(0);
+
+			clearTimeout($.data(this, 'scrollTimer'));
+
+			$.data(this, 'scrollTimer', setTimeout(function() {
+				$mobilemenu.fadeIn(250);
+			}, 250));
+		}
+	});
+
+	/*function PagesViewModel() {
 		// Data
 		var self = this;
 		self.pages = [
@@ -16212,7 +16260,7 @@ $(function () {
 		});
 	};
 
-	ko.applyBindings(new PagesViewModel());
+	ko.applyBindings(new PagesViewModel());*/
 });
-},{"Sammy":"x6MEqD","jquery":"NXEO8Z","knockout":"j5E4BW"}]},{},[7])
+},{"jquery":"NXEO8Z"}]},{},[7])
 ;

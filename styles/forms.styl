@@ -1,0 +1,75 @@
+/*
+ * The following styles follow a mobile first approach
+ * 
+ * DO NOT adhoc @media width!!!
+ * - The following min-widths are supported:
+ * - Default (think 320 - No horizonal layout), 480, 600, 768, 992, 1382
+ * - If a media query is added or removed MAKE CHANGES TO ALL FILES even if it is not being used.
+ */
+
+/* DEFAULT ============================================================================= */
+form {
+	label {
+		min-width: 120px;
+		inline-block();
+	}
+	.field-wrap {
+		margin: 4px;
+	}
+	ul {
+		margin: 20px 0; //overrides default content
+	}
+	.ninja-forms-required-items {
+		margin-bottom: 10px;
+	}
+}
+
+/* 480 PX ============================================================================= */
+@media only screen and (min-width: 480px) {
+	form {
+		
+	}
+}
+
+/* 600 PX ============================================================================= */
+@media only screen and (min-width: 600px) {
+	form {
+	
+	}
+}
+
+/* 768 PX ============================================================================= */
+@media only screen and (min-width: 768px) {
+	form {
+		float: left;
+		clear: left;
+		width: columns(4) - 2*sectionPadding;
+	}
+
+	/*
+	 * Hacked in here
+	 */
+	.code-of-conduct {
+		margin-left: columns(4) - sectionPadding;
+	}
+	#references {
+		clear: left;
+	}
+}
+
+/* 992 PX ============================================================================= */
+@media only screen and (min-width: 992px) {
+	form {
+		width: columns(6) - 2*sectionPadding;
+	}
+	.code-of-conduct {
+		margin-left: columns(6) - sectionPadding;
+	}
+}
+
+/* 992 PX ============================================================================= */
+@media only screen and (min-width: 1382px) {
+	form {
+	
+	}
+}

@@ -60,7 +60,7 @@
 
 	<!-- Windows 8 / RT 144x144 -->
 	<meta name="msapplication-TileImage" content="">
-	<meta name="msapplication-TileColor" content="#BC2828">
+	<meta name="msapplication-TileColor" content="#DBDBDB">
 
 	<!-- Microsoft. Delete if not required -->
 	<meta http-equiv="cleartype" content="on">
@@ -68,18 +68,20 @@
 	<!--[if lt IE 7 ]><script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script><script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script><![endif]-->
 </head>
 <body>
-	<div id="container">
+	<div id="main">
 		<header>
 			<a id="home" href="./index.html">
 				<img src="./images/hack-akl-logo_135x135.png" width="135" height="135"/>
 			</a>
 			<!-- Folders -->
-			<ul class="pages" data-bind="foreach: pages">
-				<li data-bind="text: $data, 
-								css: { selected: $data == $root.chosenPageId() },
-								click: $root.goToPage"></li>
-			</ul>
-			<a id="mobilemenu" href="#mobilemenu">Menu</a>
+			<nav id="my-menu">
+				<ul class="pages" data-bind="foreach: pages">
+					<li data-bind="text: $data, 
+									css: { selected: $data == $root.chosenPageId() },
+									click: $root.goToPage"></li>
+				</ul>
+				<a id="mobilemenu" href="#mobilemenu">Menu</a>
+			</nav>
 		</header>
 		<article>
 			<h1>Hack-Akl 2014 - 24-26 May 2014</h1>

@@ -33,12 +33,6 @@ task('clean', [], function ( ) {
 
 
 
-desc('Generate styles');
-task('styles', [], function ( ) {
-
-});
-
-
 
 desc('Generate scripts');
 task('scripts', [], function ( ) {

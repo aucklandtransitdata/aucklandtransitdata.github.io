@@ -9,6 +9,120 @@
 /*
  * Common lib, mixins, functions etc..
  */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url("public/fonts/helvetica_neue_ce_35_thin-webfont.eot");
+  src: url("public/fonts/helvetica_neue_ce_35_thin-webfont.eot?#iefix") format('embedded-opentype'), url("public/fonts/helvetica_neue_ce_35_thin-webfont.woff") format('woff'), url("public/fonts/helvetica_neue_ce_35_thin-webfont.ttf") format('truetype'), url("public/fonts/helvetica_neue_ce_35_thin-webfont.svg#helvetica_ce_35_thinregular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*
+ * Content inside sections
+ */
+section {
+  margin-top: 40px;
+  font-family: 'Helvetica Neue', sans-serif;
+  padding: 30px;
+  background-color: #e6eeee;
+  line-height: 1.3;
+}
+section h1,
+section h2,
+section h3,
+section h4,
+section h5 {
+  font-weight: 300;
+}
+section h1 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+section h2 {
+  font-size: 20px;
+  margin: 8px 0;
+}
+section h3 {
+  font-size: 18px;
+  margin: 6px 0;
+}
+section h4 {
+  font-size: 16px;
+  margin: 4px 0;
+}
+section ul {
+  margin: 10px 20px;
+}
+section table {
+  width: 100% !important;
+}
+section img {
+  max-width: 100%;
+  height: auto;
+}
+section .spot {
+  color: #bc2828;
+  font-size: 1.1em;
+  font-weight: 400;
+}
+section .youtube,
+section .video-wrap {
+  background-color: #dbdbdb;
+}
+section .clear {
+  clear: both;
+}
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 992px) {
+}
+@media only screen and (min-width: 1382px) {
+}
+form label {
+  min-width: 120px;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+form .field-wrap {
+  margin: 4px;
+}
+form ul {
+  margin: 20px 0;
+}
+form .ninja-forms-required-items {
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 480px) {
+}
+@media only screen and (min-width: 600px) {
+}
+@media only screen and (min-width: 768px) {
+  form {
+    float: left;
+    clear: left;
+    width: 240px;
+  }
+  .code-of-conduct {
+    margin-left: 270px;
+  }
+  #references {
+    clear: left;
+  }
+}
+@media only screen and (min-width: 992px) {
+  form {
+    width: 400px;
+  }
+  .code-of-conduct {
+    margin-left: 430px;
+  }
+}
+@media only screen and (min-width: 1382px) {
+}
 html,
 body,
 div,
@@ -103,7 +217,6 @@ a img {
 /* DEFAULT ============================================================================= */
 html {
   height: 100%;
-  background-color: #bc2828;
 }
 body {
   min-height: 100%;
@@ -115,98 +228,200 @@ body.mobilemenu {
   position: relative;
   left: 200px;
 }
-body.mobilemenu ul.pages {
+body.mobilemenu nav ul {
   display: block;
-  position: absolute;
-  left: -200px;
+/*position: absolute;
+		left: -(mobileMenuWidth);*/
+  position: fixed;
+  left: 0;
   top: 0;
   width: 200px;
 }
-#container {
-  background: url("http://at-api.aucklandtransport.govt.nz/imageresizer/website/eeeeee_100x100.png?width=60&margin=0,0,20,0&bgcolor=ffffff");
+body.mobilemenu nav ul li {
+  margin: 4px 0 8px 4px;
+}
+#main {
   height: 100%;
+}
+header {
+  background-color: #dbdbdb;
+}
+#mobilemenu {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 34px;
+  background: url("../images/menu.png") no-repeat scroll center center rgba(255,255,255,0.9);
+  overflow: hidden;
+  text-indent: -9999px;
+  -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+#home {
+  display: block;
+  overflow: hidden;
+  width: 120px;
+}
+#home img {
+  height: 80px;
+  width: auto;
 }
 nav {
   overflow: hidden;
 }
-ul.pages {
+nav ul {
+  text-align: left;
   display: none;
-  background-color: #bc2828;
   color: #fff;
   list-style: none;
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 19px;
 }
-ul.pages li {
+nav ul li {
+  position: relative;
+  z-index: 1;
   cursor: pointer;
 }
-ul.pages li:hover {
+nav ul li:hover {
   text-decoration: underline;
 }
-article {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #fcfcfc;
-  margin: 80px 10%;
-  padding: 20px 80px;
+nav ul a {
+  color: #e91760;
+  text-decoration: none;
+}
+#content {
+  overflow: hidden;
+}
+footer {
+  background-color: rgba(208,208,208,0.8);
+  overflow: hidden;
+  padding: 0 10px;
+}
+footer .sponsors {
+  font-family: 'Helvetica Neue', sans-serif;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin: 4px;
+}
+footer .links {
+  margin-top: 10px;
+  text-align: justify;
+/* For IE6 to IE7 since they don't support :after */
+  -ms-text-justify: distribute;
+  text-justify: distribute;
+  text-align-last: justify;
+  zoom: 1;
+}
+footer .links:after {
+  content: ".";
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+}
+footer .links >* {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  text-align: left;
+  text-align-last: left;
+  vertical-align: top;
+}
+footer img {
+  height: 30px;
+  width: auto;
 }
 /* 480 PX ============================================================================= */
 @media only screen and (min-width: 480px) {
+  #home {
+    width: auto;
+  }
+  footer img {
+    height: 40px;
+  }
+  footer a {
+    margin: 0 10px;
+  }
 }
 /* 600 PX ============================================================================= */
 @media only screen and (min-width: 600px) {
+  footer {
+    padding: 0 30px;
+  }
+  footer .links {
+    text-align: center;
+  }
 }
 /* 768 PX ============================================================================= */
 @media only screen and (min-width: 768px) {
+  .home {
+    display: none;
+  }
   header {
     overflow: hidden;
+    height: 109px;
   }
   a#home {
     position: absolute;
     left: 2%;
   }
-  ul.pages {
-    padding-left: 135px;
-    display: block;
-    text-align: center;
-    line-height: 30px;
-    margin-top: 52.5px;
-  }
-  ul.pages li {
+  nav ul {
+    width: 580px;
+    text-align: left;
     display: inline-block;
     *display: inline;
     zoom: 1;
-    margin: 0 6px;
+    line-height: 26px;
+    margin-top: 48px;
+    padding-left: 160px;
+  }
+  nav ul li {
+    width: 140px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
   }
   #mobilemenu {
     display: none;
   }
+  #content {
+    margin: 0 auto 100px auto;
+    width: 700px;
+  }
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  footer h3 {
+    position: absolute;
+    top: 10px;
+  }
 }
 /* 992 PX ============================================================================= */
 @media only screen and (min-width: 992px) {
-  ul.pages {
-    padding-left: 80px;
-    font-size: 21px;
-    line-height: 35px;
-    margin-top: 50px;
+  nav ul {
+    width: auto;
+    margin-top: 60px;
   }
-  ul.pages li {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-    margin: 0 12px;
+  nav ul li {
+    width: auto;
+    margin: 0 6px;
+  }
+  #content {
+    width: 940px;
   }
 }
 /* 992 PX ============================================================================= */
 @media only screen and (min-width: 1382px) {
-  ul.pages {
-    font-size: 25px;
-    line-height: 40px;
-    margin-top: 47.5px;
+  nav ul li {
+    font-size: 24px;
   }
-  ul.pages li {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-    margin: 0 17px;
+  #content {
+    width: 1260px;
   }
 }

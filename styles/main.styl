@@ -12,8 +12,16 @@
  */
 @import 'common'
 
+/*
+ * Content inside sections
+ */
+@import 'content'
+@import 'forms'
+
 mobileMenuWidth = 200px;
-logoHeight = 135px
+logoHeight = 109px
+
+mobileMenuButtonSize = 40px;
 
 
 //http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
@@ -22,7 +30,7 @@ global-reset()
 /* DEFAULT ============================================================================= */
 html {
 	height: 100%;
-	background-color: tallPoppy;
+	//background-color: alto;
 }
 
 body {
@@ -37,63 +45,154 @@ body {
 body.mobilemenu {
 	position: relative;
 	left: mobileMenuWidth;
+	
 
-	ul.pages {
+	nav ul {
 		display: block;
-		position: absolute;
-		left: -(mobileMenuWidth);
+		/*position: absolute;
+		left: -(mobileMenuWidth);*/
+		position: fixed;
+		left: 0;
+
 		top: 0;
 		width: mobileMenuWidth;
+
+		li {
+			margin: 4px 0 8px 4px;
+		}
 	}
 }
 
-#container {
-	background: url('http://at-api.aucklandtransport.govt.nz/imageresizer/website/eeeeee_100x100.png?width=60&margin=0,0,20,0&bgcolor=ffffff');
+#main {
 	height: 100%;
 }
+
+#content {
+	//background: url('http://at-api.aucklandtransport.govt.nz/imageresizer/website/eeeeee_100x100.png?width=60&margin=0,0,20,0&bgcolor=ffffff');
+}
+
+header {
+	background-color: alto;
+	//text-align: center;
+}
+
+#mobilemenu {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	width: 40px;
+	height: 34px;
+	background: url("../images/menu.png") no-repeat scroll center center rgba(255, 255, 255, 0.9);
+	overflow: hidden;
+	text-indent: -9999px;
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 4px
+}
+
+#home {
+	display: block;
+    overflow: hidden;
+    width: 120px;
+
+	img {
+		height: 80px;
+		width: auto;
+	}
+}
+
 
 nav {
 	overflow: hidden;
 }
 
-ul.pages {
+nav ul {
+	text-align: left;
 	display: none;
-	background-color: tallPoppy;
+	//background-color: alto;
 	color: white;
 	list-style: none;
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Helvetica Neue', sans-serif;
 	font-size: 19px;
 
 	li {
+		position: relative;
+		z-index: 1;
 		cursor: pointer;
 
 		&:hover {
 			text-decoration: underline;
 		}
 	}
+
+	a {
+		color: amaranth;
+		text-decoration: none;
+	}
 }
 
-article {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #fcfcfc;
-	margin: 80px 10%;
-	padding: 20px 80px;
+#content {
+	overflow: hidden;
+}
+
+footer {
+	background-color: rgba(208,208,208,.8);
+	overflow: hidden;
+	padding: 0 10px;
+
+	.sponsors {
+		font-family: 'Helvetica Neue', sans-serif;
+		inline-block();
+		margin: 4px;
+	}
+	.links {
+		margin-top: 10px;
+		justify-children(left, top);
+	}
+
+	img {
+		height: 30px;
+		width: auto;
+	}
 }
 
 /* 480 PX ============================================================================= */
 @media only screen and (min-width: 480px) {
+	#home {
+    	width: auto;
+    }
+	footer {
+
+		img {
+			height: 40px;
+		}
+
+		a {
+			margin: 0 10px;
+		}
+	}
 }
 
 /* 600 PX ============================================================================= */
 @media only screen and (min-width: 600px) {
+	footer {
+		padding: 0 30px;
 
+		.links {
+			text-align: center;
+		}
+	}
 }
 
 /* 768 PX ============================================================================= */
 @media only screen and (min-width: 768px) {
 
+	.home {
+		display: none;
+	}
+
 	header {
 		overflow: hidden;
+		height: logoHeight;
 	}
 	
 	a#home {
@@ -101,49 +200,72 @@ article {
 		left: 2%;
 	}
 
-	ul.pages {
-		padding-left: logoHeight;
-		display: block;
-		text-align: center;
-		line-height: 30px;
-		margin-top: ((logoHeight - 30px) / 2);
+	/*
+	 * Playying to make it "feel right"
+	 */
+	nav ul {
+		width: 580px;
+		text-align: left;
+		inline-block();
+		line-height: 26px;
+		margin-top: 48px;
+    	padding-left: 160px;
 
 		li {
+			width: 140px;
 			inline-block();
-			margin: 0 6px;
 		}
 	}
 
 	#mobilemenu {
 		display: none;
 	}
+
+	#content {
+		margin: 0 auto 100px auto;
+		width: columns(9);
+	}
+
+	footer {
+		h3 {
+			position: absolute;
+    		top: 10px;
+		}
+
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
 }
 
 /* 992 PX ============================================================================= */
 @media only screen and (min-width: 992px) {
-	ul.pages {
-		padding-left: 80px; // randomly chosen
-		font-size: 21px;
-		line-height: 35px;
-		margin-top: ((logoHeight - 35px) / 2);
+	nav ul {
+		width: auto;
+		margin-top: 60px;
 
 		li {
-			inline-block();
-			margin: 0 12px;
+			width: auto;
+			margin: 0 6px;
 		}
+	}
+
+	#content {
+		width: columns(12);
 	}
 }
 
 /* 992 PX ============================================================================= */
 @media only screen and (min-width: 1382px) {
-	ul.pages {
-		font-size: 25px;
-		line-height: 40px;
-		margin-top: ((logoHeight - 40px) / 2);
+	nav ul {
+		
 
 		li {
-			inline-block();
-			margin: 0 17px;
+			font-size: 24px;
 		}
+	}
+
+	#content {
+		width: columns(16);
 	}
 }
